@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between px-10 py-6">
+      <nav className="bg-landing flex items-center justify-between px-10 py-6">
         {/* Left Logo and Title */}
         <div className="flex items-center space-x-6">
           <img
@@ -36,7 +36,9 @@ export const Navbar: React.FC = () => {
             onMouseEnter={() => setIsHomeHovered(true)}
             onMouseLeave={() => setIsHomeHovered(false)}
           >
-            <span className="cursor-pointer pb-2 font-bold">Home</span>
+            <NavLink to="/Home" className="cursor-pointer pb-2 font-bold">
+              Home
+            </NavLink>
             {/* Dropdown */}
             {isHomeHovered && (
               <div className="absolute left-0 z-50 mt-2 w-32 bg-gray-100 shadow-md">
@@ -63,7 +65,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Other links */}
-          {["about", "contacts"].map((path) => (
+          {["About", "Contacts"].map((path) => (
             <NavLink
               key={path}
               to={`/${path}`}
